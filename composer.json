@@ -1,0 +1,22 @@
+{
+    "name": "sysgaming/mts-php-sdk",
+    "description": "PHP SDK for MTS of Sysgaming",
+    "type": "library",
+    "license": "GPL",
+    "autoload": {
+        "psr-4": {
+            "Sysgaming\\MtsPhpSdk\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "Rodrigo",
+            "email": "digossmi@sysgaming.com"
+        }
+    ],
+    "minimum-stability": "dev",
+    "require": {
+        "ext-openssl": "*",
+        "ext-json": "*"
+    }
+}
