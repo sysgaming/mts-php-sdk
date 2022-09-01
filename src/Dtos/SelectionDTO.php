@@ -2,35 +2,45 @@
 
 namespace Sysgaming\MtsPhpSdk\Dtos;
 
-class Selection {
+class SelectionDTO {
     /**
+     * Event ID
      * @var string
      */
-    private $ventide;
+    private $eventId;
 
     /**
+     * Odd ID
      * @var string
      */
     private $id;
 
+
     /**
+     * Odd Price
      * @var int
      */
     private $odds;
 
     /**
+     * Spoort ID
+     * @var int
+     */
+    private $sportId;
+
+    /**
      * @return string
      */
-    public function getVentide() {
-        return $this->ventide;
+    public function getEventId() {
+        return $this->eventId;
     }
 
     /**
-     * @param $ventide
+     * @param $eventId
      * @return $this
      */
-    public function setVentide($ventide) {
-        $this->ventide = $ventide;
+    public function setEventId($eventId) {
+        $this->eventId = $eventId;
         return $this;
     }
 
@@ -63,6 +73,22 @@ class Selection {
      */
     public function setOdds($odds) {
         $this->odds = $odds;
+        return $this;
+    }
+
+    /**
+     * @return int
+     */
+    public function getSportId() {
+        return $this->sportId;
+    }
+
+    /**
+     * @param $sportId
+     * @return $this
+     */
+    public function setSportId($sportId) {
+        $this->sportId = $sportId;
         return $this;
     }
 }

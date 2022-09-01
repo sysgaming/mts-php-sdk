@@ -2,21 +2,20 @@
 
 namespace Sysgaming\MtsPhpSdk\Dtos;
 
-class Sender {
+class SenderDTO {
     /**
+     * PYG
      * @var string
      */
     private $currency;
 
     /**
+     * Depende de onde a aposta está entrando
+     * Enums: internet, retail, terminal, mobile
+     * sms, callCentre, agent, tvApp
      * @var string
      */
     private $channel;
-
-    /**
-     * @var string
-     */
-    private $bookmakerId;
 
     /**
      * @var EndCustomer
@@ -27,6 +26,12 @@ class Sender {
      * @var int
      */
     private $limitId;
+
+    /**
+     * ID do vendedor/oficina/terminal(auto atendimento)
+     * @var string
+     */
+    private $terminalId;
 
     /**
      * @return string
@@ -57,22 +62,6 @@ class Sender {
      */
     public function setChannel($channel) {
         $this->channel = $channel;
-        return $this;
-    }
-
-    /**
-     * @return string
-     */
-    public function getBookmakerId() {
-        return $this->bookmakerId;
-    }
-
-    /**
-     * @param $bookmakerId
-     * @return $this
-     */
-    public function setBookmakerId($bookmakerId) {
-        $this->bookmakerId = $bookmakerId;
         return $this;
     }
 
@@ -108,5 +97,20 @@ class Sender {
         return $this;
     }
 
+    /**
+     * @return string
+     */
+    public function getTerminalId() {
+        return $this->terminalId;
+    }
+
+    /**
+     * @param $terminalId
+     * @return $this
+     */
+    public function setTerminalId($terminalId) {
+        $this->terminalId = $terminalId;
+        return $this;
+    }
 
 }

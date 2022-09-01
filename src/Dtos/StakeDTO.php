@@ -2,13 +2,17 @@
 
 namespace Sysgaming\MtsPhpSdk\Dtos;
 
-class Stake {
+class StakeDTO {
+
     /**
+     * Valor da aposta
      * @var int
      */
     private $value;
 
     /**
+     * Default: total
+     * Enums: total, unit
      * @var string
      */
     private $type;

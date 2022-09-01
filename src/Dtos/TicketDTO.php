@@ -5,36 +5,55 @@ namespace Sysgaming\MtsPhpSdk\Dtos;
 class TicketDTO
 {
     /**
+     * Horário de envio do ticket
      * @var int
      */
     private $timestampUtc;
 
     /**
-     * array
-     * @var Bet[]
+     * Valores das bets
+     * @var BetDTO[]
      */
     private $bets;
 
+
     /**
+     * Código de aposta
      * @var string
      */
     private $ticketId;
 
     /**
-     * array
-     * @var Selection[]
+     * Opções selecionadas
+     * @var SelectionDTO[]
      */
     private $selections;
 
     /**
-     * @var Sender
+     * @var SenderDTO
      */
     private $sender;
 
     /**
+     * Formato do ticket
+     * opcional
      * @var string
      */
     private $version;
+
+    /**
+     * Default: higher
+     * Enums: none, any, higher
+     * @var string
+     */
+    private $oddChanged;
+
+    /**
+     * LIVE
+     * PREMATCH
+     * @var string
+     */
+    private $betScope;
 
     /**
      * @return int
@@ -55,7 +74,7 @@ class TicketDTO
     }
 
     /**
-     * @return Bet[]
+     * @return BetDTO[]
      */
     public function getBets()
     {
@@ -91,7 +110,7 @@ class TicketDTO
     }
 
     /**
-     * @return Selection[]
+     * @return SelectionDTO[]
      */
     public function getSelections()
     {
@@ -109,7 +128,7 @@ class TicketDTO
     }
 
     /**
-     * @return Sender
+     * @return SenderDTO
      */
     public function getSender()
     {
@@ -143,4 +162,41 @@ class TicketDTO
         $this->version = $version;
         return $this;
     }
+
+    /**
+     * @return string
+     */
+    public function getOddChanged()
+    {
+        return $this->oddChanged;
+    }
+
+    /**
+     * @param $oddChanged
+     * @return $this
+     */
+    public function setOddChanged($oddChanged)
+    {
+        $this->oddChanged = $oddChanged;
+        return $this;
+    }
+
+    /**
+     * @return string
+     */
+    public function getBetScope()
+    {
+        return $this->betScope;
+    }
+
+    /**
+     * @param $betScope
+     * @return $this
+     */
+    public function setBetScope($betScope)
+    {
+        $this->betScope = $betScope;
+        return $this;
+    }
+
 }

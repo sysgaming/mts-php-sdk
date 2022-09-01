@@ -9,6 +9,7 @@ class EndCustomer {
     private $ip;
 
     /**
+     * ES
      * @var string
      */
     private $languageId;

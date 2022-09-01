@@ -2,25 +2,20 @@
 
 namespace Sysgaming\MtsPhpSdk\Dtos;
 
-class Bet {
+class BetDTO {
     /**
-     * @var Stake
+     * @var StakeDTO
      */
     private $stake;
 
     /**
+     * ID opcional
      * @var string
      */
     private $id;
 
     /**
-     * array
-     * @var int[]
-     */
-    private $selectedSystems;
-
-    /**
-     * @return Stake
+     * @return StakeDTO
      */
     public function getStake() {
         return $this->stake;
@@ -50,21 +45,4 @@ class Bet {
         $this->id = $id;
         return $this;
     }
-
-    /**
-     * @return int[]
-     */
-    public function getSelectedSystems() {
-        return $this->selectedSystems;
-    }
-
-    /**
-     * @param $selectedSystems
-     * @return $this
-     */
-    public function setSelectedSystems($selectedSystems) {
-        $this->selectedSystems = $selectedSystems;
-        return $this;
-    }
-
 }
