@@ -18,7 +18,7 @@ class SenderDTO {
     private $channel;
 
     /**
-     * @var EndCustomer
+     * @var EndCustomerDTO
      */
     private $endCustomer;
 

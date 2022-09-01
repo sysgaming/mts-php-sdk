@@ -2,7 +2,7 @@
 
 namespace Sysgaming\MtsPhpSdk\Dtos;
 
-class EndCustomer {
+class EndCustomerDTO {
     /**
      * @var string
      */
