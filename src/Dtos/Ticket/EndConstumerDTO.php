@@ -1,8 +1,8 @@
 <?php
 
-namespace Sysgaming\MtsPhpSdk\Dtos;
+namespace Sysgaming\MtsPhpSdk\Dtos\Ticket;
 
-class EndCustomerDTO {
+class EndConstumerDTO {
     /**
      * @var string
      */
@@ -65,6 +65,15 @@ class EndCustomerDTO {
     public function setId($id) {
         $this->id = $id;
         return $this;
+    }
+
+    public function toArray()
+    {
+        return [
+            'ip' => $this->getIp(),
+            'languageId' => $this->getLanguageId(),
+            'id' => $this->getId(),
+        ];
     }
 
 }

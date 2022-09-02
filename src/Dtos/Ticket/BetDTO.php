@@ -1,6 +1,6 @@
 <?php
 
-namespace Sysgaming\MtsPhpSdk\Dtos;
+namespace Sysgaming\MtsPhpSdk\Dtos\Ticket;
 
 class BetDTO {
     /**
@@ -44,5 +44,13 @@ class BetDTO {
     public function setId($id) {
         $this->id = $id;
         return $this;
+    }
+
+    public function toArray()
+    {
+        return [
+            'stake' => $this->getStake()->toArray(),
+            'id' => $this->getId(),
+        ];
     }
 }

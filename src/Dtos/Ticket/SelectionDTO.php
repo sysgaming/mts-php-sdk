@@ -1,6 +1,6 @@
 <?php
 
-namespace Sysgaming\MtsPhpSdk\Dtos;
+namespace Sysgaming\MtsPhpSdk\Dtos\Ticket;
 
 class SelectionDTO {
     /**
@@ -90,5 +90,15 @@ class SelectionDTO {
     public function setSportId($sportId) {
         $this->sportId = $sportId;
         return $this;
+    }
+
+    public function toArray()
+    {
+        return [
+            'eventId' => $this->getEventId(),
+            'id' => $this->getId(),
+            'odds' => $this->getOdds(),
+            'sportId' => $this->getSportId(),
+        ];
     }
 }

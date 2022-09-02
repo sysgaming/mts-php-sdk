@@ -18,5 +18,8 @@
 .temp
 
 composer.lock
-
 vendor/
+
+# Testing
+#src/TicketHelper.php
+#teste.php

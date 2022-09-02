@@ -16,7 +16,7 @@
     ],
     "minimum-stability": "dev",
     "require": {
-        "ext-openssl": "*",
+        "guzzlehttp/guzzle": "^7.0",
         "ext-json": "*"
     }
 }

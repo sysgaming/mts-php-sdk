@@ -1,6 +1,6 @@
 <?php
 
-namespace Sysgaming\MtsPhpSdk\Dtos;
+namespace Sysgaming\MtsPhpSdk\Dtos\Ticket;
 
 class SenderDTO {
     /**
@@ -18,7 +18,7 @@ class SenderDTO {
     private $channel;
 
     /**
-     * @var EndCustomerDTO
+     * @var EndConstumerDTO
      */
     private $endCustomer;
 
@@ -111,6 +111,17 @@ class SenderDTO {
     public function setTerminalId($terminalId) {
         $this->terminalId = $terminalId;
         return $this;
+    }
+
+    public function toArray()
+    {
+        return [
+            'currency' => $this->getCurrency(),
+            'channel' => $this->getChannel(),
+            'endCustomer' => $this->getEndCustomer()->toArray(),
+            'limitId' => $this->getLimitId(),
+            'terminalId' => $this->getTerminalId(),
+        ];
     }
 
 }

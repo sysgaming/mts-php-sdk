@@ -1,6 +1,6 @@
 <?php
 
-namespace Sysgaming\MtsPhpSdk\Dtos;
+namespace Sysgaming\MtsPhpSdk\Dtos\Ticket;
 
 class StakeDTO {
 
@@ -47,5 +47,13 @@ class StakeDTO {
     public function setType($type) {
         $this->type = $type;
         return $this;
+    }
+
+    public function toArray()
+    {
+        return [
+            'value' => $this->getValue(),
+            'type' => $this->getType(),
+        ];
     }
 }

@@ -1,6 +1,6 @@
 <?php
 
-namespace Sysgaming\MtsPhpSdk\Dtos;
+namespace Sysgaming\MtsPhpSdk\Dtos\Ticket;
 
 class TicketDTO
 {
@@ -197,6 +197,31 @@ class TicketDTO
     {
         $this->betScope = $betScope;
         return $this;
+    }
+
+    public function toJson()
+    {
+        return json_encode($this->toArray());
+    }
+
+    private function toArray()
+    {
+        $array = array();
+        $array['timestampUtc'] = $this->timestampUtc;
+        $array['bets'] = array();
+        foreach ($this->bets as $bet) {
+            $array['bets'][] = $bet->toArray();
+        }
+        $array['ticketId'] = $this->ticketId;
+        $array['selections'] = array();
+        foreach ($this->selections as $selection) {
+            $array['selections'][] = $selection->toArray();
+        }
+        $array['sender'] = $this->sender->toArray();
+        $array['version'] = $this->version;
+        $array['oddChanged'] = $this->oddChanged;
+        $array['betScope'] = $this->betScope;
+        return $array;
     }
 
 }
