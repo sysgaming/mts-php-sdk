@@ -33,12 +33,11 @@ abstract class MtsControllerImpl implements MtsController
        }
 
        $payload = $infosMts->getTicket()->toJson();
+       $pathRequest = '/mts/playcet';
 
-       $pathRequest = '/playcet_live2/mts/1';
+       $request = $this->makeMtsRequest($pathRequest, $payload);
 
-       $request = $this->makeMtsRequest($this->feederMtsEndpoint . $pathRequest, $payload);
-
-        return $this->doHttpPost($request);
+       return $this->doHttpPost($request);
     }
 
     /**
