@@ -18,9 +18,9 @@ class SenderDTO {
     private $channel;
 
     /**
-     * @var EndConstumerDTO
+     * @var EndCostumerDTO
      */
-    private $endCustomer;
+    private $endCostumer;
 
     /**
      * @var int
@@ -66,18 +66,18 @@ class SenderDTO {
     }
 
     /**
-     * @return EndCustomer
+     * @return EndCostumerDTO
      */
-    public function getEndCustomer() {
-        return $this->endCustomer;
+    public function getEndCostumer() {
+        return $this->endCostumer;
     }
 
     /**
-     * @param $endCustomer
+     * @param $endCostumer
      * @return $this
      */
-    public function setEndCustomer($endCustomer) {
-        $this->endCustomer = $endCustomer;
+    public function setEndCostumer($endCostumer) {
+        $this->endCostumer = $endCostumer;
         return $this;
     }
 
@@ -118,7 +118,7 @@ class SenderDTO {
         return [
             'currency' => $this->getCurrency(),
             'channel' => $this->getChannel(),
-            'endCustomer' => $this->getEndCustomer()->toArray(),
+            'endCustomer' => $this->getEndCostumer()->toArray(),
             'limitId' => $this->getLimitId(),
             'terminalId' => $this->getTerminalId(),
         ];

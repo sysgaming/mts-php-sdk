@@ -2,7 +2,7 @@
 
 namespace Sysgaming\MtsPhpSdk\Dtos\Ticket;
 
-class EndConstumerDTO {
+class EndCostumerDTO {
     /**
      * @var string
      */

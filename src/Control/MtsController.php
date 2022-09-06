@@ -24,10 +24,4 @@ interface MtsController {
      */
     function sendInfosMts(SendInfosMts $infosMts);
 
-    /**
-     * @param $path
-     * @param $payload
-     * @return MtsRequest
-     */
-    function makeMtsRequest($path, $payload);
 }
