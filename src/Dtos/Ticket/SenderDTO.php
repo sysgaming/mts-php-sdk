@@ -34,6 +34,14 @@ class SenderDTO {
     private $terminalId;
 
     /**
+     *
+     */
+    public function __construct()
+    {
+        $this->endCostumer = new EndCostumerDTO();
+    }
+
+    /**
      * @return string
      */
     public function getCurrency() {

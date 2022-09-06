@@ -56,6 +56,15 @@ class TicketDTO
     private $betScope;
 
     /**
+     *
+     */
+    public function __construct()
+    {
+        $this->bets = [];
+        $this->selections = [];
+    }
+
+    /**
      * @return int
      */
     public function getTimestampUtc()

@@ -31,6 +31,14 @@ class BetDTO {
     }
 
     /**
+     *
+     */
+    public function __construct()
+    {
+        $this->stake = new StakeDTO();
+    }
+
+    /**
      * @return string
      */
     public function getId() {

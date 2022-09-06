@@ -10,9 +10,17 @@ class MtsResponse
     private $statusCode;
 
     /**
-     * @var string
+     * @var MtsResultResponse
      */
-    private $contents;
+    private $result;
+
+    /**
+     *
+     */
+    public function __construct()
+    {
+        $this->result = new MtsResultResponse();
+    }
 
     /**
      * @return int
@@ -33,20 +41,20 @@ class MtsResponse
     }
 
     /**
-     * @return string
+     * @return MtsResultResponse
      */
-    public function getContents()
+    public function getResult()
     {
-        return $this->contents;
+        return $this->result;
     }
 
     /**
-     * @param $contents
+     * @param MtsResultResponse $result
      * @return $this
      */
-    public function setContents($contents)
+    public function setResult(MtsResultResponse $result)
     {
-        $this->contents = $contents;
+        $this->result = $result;
         return $this;
     }
 
