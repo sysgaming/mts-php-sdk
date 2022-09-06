@@ -88,10 +88,20 @@ class MtsResultResponse
     }
 
     /**
-     * @return MtsBetDetailsResponse
+     * @return array|MtsBetDetailsResponse[]
      */
     public function getBetDetails()
     {
         return $this->betDetails;
+    }
+
+    /**
+     * @param $betDetails
+     * @return $this
+     */
+    public function setBetDetails($betDetails)
+    {
+        $this->betDetails = $betDetails;
+        return $this;
     }
 }
