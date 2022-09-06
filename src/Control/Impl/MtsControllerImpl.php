@@ -16,6 +16,7 @@ abstract class MtsControllerImpl implements MtsController
     private $feederMtsEndpoint;
 
     /**
+     * MtsControllerImpl constructor.
      * @param $feederMtsEndpoint
      */
     public function __construct($feederMtsEndpoint) {
@@ -23,6 +24,7 @@ abstract class MtsControllerImpl implements MtsController
     }
 
     /**
+     * Send infos to MTS server
      * @param SendInfosMts $infosMts
      * @return MtsResponse
      * @throws TicketRequiredException
@@ -41,6 +43,7 @@ abstract class MtsControllerImpl implements MtsController
     }
 
     /**
+     * Make MTS Request with path and payload
      * @param $path
      * @param $payload
      * @return MtsRequest

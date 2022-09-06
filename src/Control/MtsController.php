@@ -7,6 +7,9 @@ use Sysgaming\MtsPhpSdk\Dtos\Mts\MtsResponse;
 use Sysgaming\MtsPhpSdk\Dtos\Mts\SendInfosMts;
 
 interface MtsController {
+    /**
+     * Signature header name (if needed)
+     */
     const SIGNATURE_HEADER_NAME = 'X-Mts-Signature';
 
     /**
