@@ -5,11 +5,6 @@ namespace Sysgaming\MtsPhpSdk\Dtos\Mts;
 class MtsResponse
 {
     /**
-     * @var int
-     */
-    private $statusCode;
-
-    /**
      * @var MtsResultResponse
      */
     private $result;
@@ -20,24 +15,6 @@ class MtsResponse
     public function __construct()
     {
         $this->result = new MtsResultResponse();
-    }
-
-    /**
-     * @return int
-     */
-    public function getStatusCode()
-    {
-        return $this->statusCode;
-    }
-
-    /**
-     * @param $statusCode
-     * @return $this
-     */
-    public function setStatusCode($statusCode)
-    {
-        $this->statusCode = $statusCode;
-        return $this;
     }
 
     /**
