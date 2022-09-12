@@ -2,14 +2,16 @@
 
 namespace Sysgaming\MtsPhpSdk\Exceptions;
 
-class UnknownMtsException extends MtsException {
+use Sysgaming\MtsPhpSdk\Dtos\Mts\MtsResponse;
+
+class UnknownMtsException extends MtsServerException {
 
     /**
      * UnknownMtsException constructor.
-     * @param string $message
+     * @param MtsResponse $mtsResponse
      */
-    public function __construct($message = "") {
-        parent::__construct($message);
+    public function __construct($mtsResponse) {
+        parent::__construct($mtsResponse);
     }
 
 }

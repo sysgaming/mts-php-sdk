@@ -2,13 +2,12 @@
 
 namespace Sysgaming\MtsPhpSdk\Exceptions;
 
-use Exception;
-
-class MtsException extends Exception
+class MtsClientException extends MtsGenericException
 {
+
     /**
      * MtsException constructor.
-     * @param $message
+     * @param string $message
      */
     public function __construct($message = "")  {
         parent::__construct($message);

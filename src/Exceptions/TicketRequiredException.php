@@ -2,7 +2,7 @@
 
 namespace Sysgaming\MtsPhpSdk\Exceptions;
 
-class TicketRequiredException extends MtsException {
+class TicketRequiredException extends MtsClientException {
 
     /**
      * TicketRequiredException constructor.

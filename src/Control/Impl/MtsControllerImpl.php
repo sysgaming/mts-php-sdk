@@ -6,7 +6,11 @@ use Sysgaming\MtsPhpSdk\Control\MtsController;
 use Sysgaming\MtsPhpSdk\Dtos\Mts\MtsRequest;
 use Sysgaming\MtsPhpSdk\Dtos\Mts\SendInfosMts;
 use \Sysgaming\MtsPhpSdk\Dtos\Mts\MtsResponse;
+use Sysgaming\MtsPhpSdk\Exceptions\MtsException;
+use Sysgaming\MtsPhpSdk\Exceptions\MtsGenericException;
+use Sysgaming\MtsPhpSdk\Exceptions\MtsServerException;
 use Sysgaming\MtsPhpSdk\Exceptions\TicketRequiredException;
+use Sysgaming\MtsPhpSdk\Exceptions\UnknownMtsException;
 
 abstract class MtsControllerImpl implements MtsController
 {
@@ -27,7 +31,7 @@ abstract class MtsControllerImpl implements MtsController
      * Send infos to MTS server
      * @param SendInfosMts $infosMts
      * @return MtsResponse
-     * @throws TicketRequiredException
+     * @throws MtsGenericException
      */
     function sendInfosMts(SendInfosMts $infosMts) {
        if ( !$infosMts->getTicket() ) {
@@ -40,7 +44,24 @@ abstract class MtsControllerImpl implements MtsController
            ->setEndpoint($this->feederMtsEndpoint)
            ->setContents($payload);
 
-       return $this->doHttpPost($request);
+       $mtsResponse = $this->doHttpPost($request);
+
+       $this->verifyIfMtsResponseRejected($mtsResponse);
+
+       return $mtsResponse;
+    }
+
+    /**
+     * @param MtsResponse $mtsResponse
+     * @throws MtsServerException
+     */
+    private function verifyIfMtsResponseRejected($mtsResponse) {
+
+        if( $mtsResponse->getStatus() == self::MTS_RESPONSE_STATUS_ACCEPTED )
+            return;
+
+        throw new UnknownMtsException($mtsResponse);
+
     }
 
 }
