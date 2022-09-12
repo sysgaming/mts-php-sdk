@@ -4,100 +4,99 @@ namespace Sysgaming\MtsPhpSdk\Dtos\Mts;
 
 class MtsResponse
 {
-    /**
-     * @var MtsResultResponse
-     */
-    private $result;
 
     /**
      * @var string
      */
-    private $version;
-
-    /**
-     * @var string
-     */
-    private $signature;
+    private $status;
 
     /**
      * @var int
      */
-    private $exchangeRate;
+    private $mtsCode;
+
+    /**
+     * @var int
+     */
+    private $code;
+
+    /**
+     * @var string
+     */
+    private $message;
+
 
     /**
      *
      */
-    public function __construct()
-    {
-        $this->result = new MtsResultResponse();
-    }
+    public function __construct(){}
 
-    /**
-     * @return MtsResultResponse
-     */
-    public function getResult()
-    {
-        return $this->result;
-    }
-
-    /**
-     * @param MtsResultResponse $result
-     * @return $this
-     */
-    public function setResult($result)
-    {
-        $this->result = $result;
-        return $this;
-    }
 
     /**
      * @return string
      */
-    public function getVersion()
+    public function getStatus()
     {
-        return $this->version;
+        return $this->status;
     }
 
     /**
-     * @param $version
+     * @param $status
      * @return $this
      */
-    public function setVersion($version)
+    public function setStatus($status)
     {
-        $this->version = $version;
-        return $this;
-    }
-
-    /**
-     * @return string
-     */
-    public function getSignature()
-    {
-        return $this->signature;
-    }
-
-    /**
-     * @param $signature
-     * @return $this
-     */
-    public function setSignature($signature)
-    {
-        $this->signature = $signature;
+        $this->status = $status;
         return $this;
     }
 
     /**
      * @return int
      */
-    public function getExchangeRate()
+    public function getMtsCode()
     {
-        return $this->exchangeRate;
+        return $this->mtsCode;
     }
 
-    public function setExchangeRate($exchangeRate)
+    /**
+     * @param int $mtsCode
+     */
+    public function setMtsCode($mtsCode)
     {
-        $this->exchangeRate = $exchangeRate;
-        return $this;
+        $this->mtsCode = $mtsCode;
     }
+
+    /**
+     * @return int
+     */
+    public function getCode()
+    {
+        return $this->code;
+    }
+
+    /**
+     * @param int $code
+     */
+    public function setCode($code)
+    {
+        $this->code = $code;
+    }
+
+    /**
+     * @return string
+     */
+    public function getMessage()
+    {
+        return $this->message;
+    }
+
+    /**
+     * @param string $message
+     */
+    public function setMessage($message)
+    {
+        $this->message = $message;
+    }
+
 
 }
