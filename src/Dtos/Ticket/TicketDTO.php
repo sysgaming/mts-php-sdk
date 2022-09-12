@@ -49,13 +49,6 @@ class TicketDTO
     private $oddChanged;
 
     /**
-     * LIVE
-     * PREMATCH
-     * @var string
-     */
-    private $betScope;
-
-    /**
      *
      */
     public function __construct()
@@ -190,24 +183,6 @@ class TicketDTO
         return $this;
     }
 
-    /**
-     * @return string
-     */
-    public function getBetScope()
-    {
-        return $this->betScope;
-    }
-
-    /**
-     * @param $betScope
-     * @return $this
-     */
-    public function setBetScope($betScope)
-    {
-        $this->betScope = $betScope;
-        return $this;
-    }
-
     public function toJson()
     {
         return json_encode($this->toArray());
@@ -229,7 +204,6 @@ class TicketDTO
         $array['sender'] = $this->sender->toArray();
         $array['version'] = $this->version;
         $array['oddChanged'] = $this->oddChanged;
-        $array['betScope'] = $this->betScope;
         return $array;
     }
 

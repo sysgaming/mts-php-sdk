@@ -3,6 +3,10 @@
 namespace Sysgaming\MtsPhpSdk\Dtos\Ticket;
 
 class SelectionDTO {
+
+    const BET_SCOPE_LIVE = 'LIVE';
+    const BET_SCOPE_PREMATCH = 'PREMATCH';
+
     /**
      * Event ID
      * @var string
@@ -27,6 +31,12 @@ class SelectionDTO {
      * @var int
      */
     private $sportId;
+
+    /**
+     * LIVE | PREMATCH
+     * @var string
+     */
+    private $betScope;
 
     /**
      * @return string
@@ -92,6 +102,24 @@ class SelectionDTO {
         return $this;
     }
 
+    /**
+     * @return string
+     */
+    public function getBetScope()
+    {
+        return $this->betScope;
+    }
+
+    /**
+     * @param string $betScope
+     * @return $this
+     */
+    public function setBetScope($betScope)
+    {
+        $this->betScope = $betScope;
+        return $this;
+    }
+
     public function toArray()
     {
         return [
@@ -99,6 +127,7 @@ class SelectionDTO {
             'id' => $this->getId(),
             'odds' => $this->getOdds(),
             'sportId' => $this->getSportId(),
+            'betScope' => $this->getBetScope(),
         ];
     }
 }
