@@ -4,6 +4,9 @@ namespace Sysgaming\MtsPhpSdk\Dtos\Ticket;
 
 class TicketDTO
 {
+    const BET_SCOPE_LIVE = 'LIVE';
+    const BET_SCOPE_PREMATCH = 'PREMATCH';
+
     /**
      * Horário de envio do ticket
      * @var int
@@ -47,11 +50,6 @@ class TicketDTO
      * @var string
      */
     private $oddChanged;
-
-    /**
-     * @var string
-     */
-    private $betScope;
 
     /**
      *
@@ -185,17 +183,6 @@ class TicketDTO
     public function setOddChanged($oddChanged)
     {
         $this->oddChanged = $oddChanged;
-        return $this;
-    }
-
-    public function getBetScope()
-    {
-        return $this->betScope;
-    }
-
-    public function setBetScope($betScope)
-    {
-        $this->betScope = $betScope;
         return $this;
     }
 
