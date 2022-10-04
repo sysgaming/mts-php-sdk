@@ -49,6 +49,11 @@ class TicketDTO
     private $oddChanged;
 
     /**
+     * @var string
+     */
+    private $betScope;
+
+    /**
      *
      */
     public function __construct()
@@ -180,6 +185,17 @@ class TicketDTO
     public function setOddChanged($oddChanged)
     {
         $this->oddChanged = $oddChanged;
+        return $this;
+    }
+
+    public function getBetScope()
+    {
+        return $this->betScope;
+    }
+
+    public function setBetScope($betScope)
+    {
+        $this->betScope = $betScope;
         return $this;
     }
 
