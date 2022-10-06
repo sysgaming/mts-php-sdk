@@ -127,7 +127,7 @@ class SelectionDTO {
             'id' => $this->getId(),
             'odds' => $this->getOdds(),
             'sportId' => $this->getSportId(),
-//            'betScope' => $this->getBetScope(),
+            'betScope' => $this->getBetScope(),
         ];
     }
 }
