@@ -4,7 +4,7 @@ namespace Sysgaming\MtsPhpSdk\Dtos\Ticket;
 
 class SenderDTO {
     /**
-     * PYG
+     * PYG/ARGS/USD
      * @var string
      */
     private $currency;
@@ -28,7 +28,7 @@ class SenderDTO {
     private $limitId;
 
     /**
-     * ID do vendedor/oficina/terminal(auto atendimento)
+     * ID do vendedor/oficina/terminal(auto-atendimento)
      * @var string
      */
     private $terminalId;

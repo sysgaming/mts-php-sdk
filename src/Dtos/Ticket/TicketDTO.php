@@ -186,11 +186,17 @@ class TicketDTO
         return $this;
     }
 
+    /**
+     * @return false|string
+     */
     public function toJson()
     {
         return json_encode($this->toArray());
     }
 
+    /**
+     * @return array
+     */
     private function toArray()
     {
         $array = array();

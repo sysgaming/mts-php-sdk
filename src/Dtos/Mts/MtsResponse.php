@@ -25,12 +25,10 @@ class MtsResponse
      */
     private $message;
 
-
     /**
      *
      */
     public function __construct(){}
-
 
     /**
      * @return string
