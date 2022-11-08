@@ -39,6 +39,12 @@ class SelectionDTO {
     private $betScope;
 
     /**
+     * Flag para indicar se a odd é outright
+     * @var bool
+     */
+    private $isOutright;
+
+    /**
      * @return string
      */
     public function getEventId() {
@@ -120,6 +126,24 @@ class SelectionDTO {
         return $this;
     }
 
+    /**
+     * @return bool
+     */
+    public function isOutright()
+    {
+        return $this->isOutright;
+    }
+
+    /**
+     * @param bool $isOutright
+     * @return $this
+     */
+    public function setIsOutright($isOutright)
+    {
+        $this->isOutright = $isOutright;
+        return $this;
+    }
+
     public function toArray()
     {
         return [
@@ -128,6 +152,7 @@ class SelectionDTO {
             'odds' => $this->getOdds(),
             'sportId' => $this->getSportId(),
             'betScope' => $this->getBetScope(),
+            'isOutright' => $this->isOutright()
         ];
     }
 }

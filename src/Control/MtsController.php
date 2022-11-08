@@ -17,7 +17,15 @@ interface MtsController {
      * Signature header name (if needed)
      */
     const SIGNATURE_HEADER_NAME = 'X-Mts-Signature';
+
+    /**
+     *
+     */
     const MTS_RESPONSE_STATUS_ACCEPTED = 'accepted';
+
+    /**
+     *
+     */
     const MTS_CANCEL_RESPONSE_STATUS_ACCEPTED = 'accepted';
 
     /**
