@@ -64,6 +64,7 @@ abstract class MtsControllerImpl implements MtsController
         if( $mtsResponse->getStatus() == self::MTS_RESPONSE_STATUS_ACCEPTED )
             return;
 
+        //TODO: map all possible errors
         throw new UnknownMtsException($mtsResponse);
 
     }
@@ -88,38 +89,27 @@ abstract class MtsControllerImpl implements MtsController
         $payload = $cancelTicketMts->toJson();
 
         $request = (new MtsRequest())
-            ->setEndpoint($this->feederMtsEndpoint)
+            ->setEndpoint($this->feederMtsEndpoint . '/cancel')
             ->setContents($payload);
 
         $mtsResponse = $this->doHttpPostCancel($request);
 
-        return $this->verifyMtsCancelResponse($mtsResponse);
+        $this->verifyMtsCancelResponse($mtsResponse);
+
+        return $mtsResponse;
     }
 
     /**
      * @param MtsCancelResponse $mtsResponse
      * @throws UnknownMtsCancelException
-     * @return MtsCancelResponse
      */
     private function verifyMtsCancelResponse($mtsResponse)
     {
-        if( $mtsResponse->getStatus() == self::MTS_CANCEL_RESPONSE_STATUS_ACCEPTED ) {
-            $friendlyStatus = [
-                101 => 'CustomerTriggeredPrematch',
-                102 => 'TimeoutTriggered',
-                103 => 'BookmakerBackofficeTriggered',
-                104 => 'BookmakerTechnicalIssue',
-                105 => 'ExceptionalBookmakerTriggered',
-                106 => 'BookmakerCashbackPromotionCancellation',
-                301 => 'SogeiTriggered',
-                302 => 'SccsTriggered'
-            ];
-
-            $mtsResponse->setFriendlyMessage($friendlyStatus[$mtsResponse->getCancelCode()]);
-
-            return $mtsResponse;
+        if( $mtsResponse->getStatus() == self::MTS_CANCEL_RESPONSE_STATUS_CANCELLED ) {
+            return;
         }
 
+        //TODO: map all possible errors
         throw new UnknownMtsCancelException($mtsResponse);
     }
 

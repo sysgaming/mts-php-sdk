@@ -26,7 +26,7 @@ interface MtsController {
     /**
      *
      */
-    const MTS_CANCEL_RESPONSE_STATUS_ACCEPTED = 'accepted';
+    const MTS_CANCEL_RESPONSE_STATUS_CANCELLED = 'Cancelled';
 
     /**
      * @param MtsRequest $request

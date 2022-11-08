@@ -12,12 +12,12 @@ class MtsCancelResponse
     /**
      * @var int
      */
-    private $cancelCode;
+    private $reasonCode;
 
     /**
      * @var string
      */
-    private $friendlyMessage;
+    private $reasonMessage;
 
     /**
      *
@@ -45,36 +45,36 @@ class MtsCancelResponse
     /**
      * @return int
      */
-    public function getCancelCode()
+    public function getReasonCode()
     {
-        return $this->cancelCode;
+        return $this->reasonCode;
     }
 
     /**
-     * @param int $cancelCode
+     * @param int $reasonCode
      * @return $this
      */
-    public function setCancelCode($cancelCode)
+    public function setReasonCode($reasonCode)
     {
-        $this->cancelCode = $cancelCode;
+        $this->reasonCode = $reasonCode;
         return $this;
     }
 
     /**
      * @return string
      */
-    public function getFriendlyMessage()
+    public function getReasonMessage()
     {
-        return $this->friendlyMessage;
+        return $this->reasonMessage;
     }
 
     /**
-     * @param $friendlyMessage
+     * @param string $reasonMessage
      * @return $this
      */
-    public function setFriendlyMessage($friendlyMessage)
+    public function setReasonMessage($reasonMessage)
     {
-        $this->friendlyMessage = $friendlyMessage;
+        $this->reasonMessage = $reasonMessage;
         return $this;
     }
 
